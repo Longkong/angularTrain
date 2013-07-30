@@ -19,6 +19,10 @@ namespace AngularTrain.Controllers
             return View();
         }
 
-       
+        public ActionResult Module()
+        {
+            return View();
+        }
+
     }
 }

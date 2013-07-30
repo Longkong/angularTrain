@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="ModuleApp">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Module</title>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/Js/module.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+<body>
+    <script>
+       var c1m =  angular.module('c1', []);
+       c1m.controller('SCCtrl1', function ($scope) {
+           $scope.C1Only = "C1Only";
+       });
+    </script>
+    <div ng-controller="SCCtrl1">
+    {{C1Only}}
+    <input type="text" ng-model="C1Only" />
+    </div>
+    <script>
+        var c2m = angular.module('c2', []);
+        c2m.controller('SCCtrl2', function ($scope) {
+            $scope.C2Only = "C2Only";
+        });
+        angular.module('ModuleApp', ['c1', 'c2']);
+    </script>
+    <div ng-controller="SCCtrl2">
+    {{C2Only}}
+    </div>
+</body>
+</html>
