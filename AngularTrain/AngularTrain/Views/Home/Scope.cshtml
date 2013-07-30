@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html ng-app="">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Scope</title>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/Js/scope.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row-fluid">
+        <div ng-controller="LeftCtrl" class="span2 line-append" style="height: 500px; border: 1px solid gray">
+            <h4>Left {{scname}}</h4>
+        </div>
+        <div ng-controller="MidCtrl" class="span8 line-append" style="height: 500px; border: 1px solid gray">
+            <h4>Mid {{scname}}</h4>
+            <input ng-model="scname" placeholder="every scope" />
+            <input ng-model="midonly" placeholder="Mid Only" />
+            <input ng-model="C11only" placeholder="C11 Only" />
+           
+
+            <div ng-controller="C11Ctrl" style="border: 1px solid gray">
+                1.1 {{scname}}
+            <p>{{midonly}}</p>
+                <input ng-model="midonly" placeholder="mid Only" />
+                <input ng-model="C11only" placeholder="C11 Only" />
+
+                
+            </div>
+            <div ng-controller="C12Ctrl" style="border: 1px solid gray">
+                1.2 {{scname}}
+            <p>{{midonly}}</p>
+           
+            </div>
+        </div>
+        <div ng-controller="RightCtrl" class="span2" style="height: 500px; border: 1px solid gray">
+            <h4>Right {{scname}}</h4>
+            
+        </div>
+    </div>
+
+</body>
+</html>
